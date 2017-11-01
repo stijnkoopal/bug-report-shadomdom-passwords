@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view1">
@@ -21,12 +22,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
+    <form is="iron-form" id="reg-form" action="/" method="get">
+      <paper-input id="name" name="name" label="Whatever name" autocomplete="name" pattern=".{1,32}"
+                   error-message="4-32 letters please" auto-validate="" required="" tabindex="0" aria-disabled="false"
+                   class="x-scope paper-input-0">
+
+      </paper-input>
+      <paper-input type="email" id="email" name="email" label="Fake email address" autocomplete="username email"
+                   error-message="at least email format, please" auto-validate="" required="" tabindex="0"
+                   aria-disabled="false" class="x-scope paper-input-0">
+
+      </paper-input>
+      <paper-input id="password" type="password" name="password" label="Bogus password" autocomplete="new-password"
+                   pattern=".{4,32}" error-message="4-32 letters please" auto-validate="" required="" tabindex="0"
+                   aria-disabled="false" class="x-scope paper-input-0">
+
+      </paper-input>
+      <div class="layout horizontal around-justified">
+        <button type="submit" class="hidden">
+          <paper-button raised="" role="button" tabindex="0" animated="" aria-disabled="false" elevation="1"
+                        class="x-scope paper-button-0">Register
+          </paper-button>
+        </button>
+      </div>
+    </form>
   </template>
 
   <script>
